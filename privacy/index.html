@@ -54,7 +54,7 @@
   <main>
     <h1>Privacy Policy for Placemarks</h1>
 
-    <p>Placemarks does not collect, sell, or share personal data from the app.</p>
+    <p>Placemarks’ developer does not collect, sell, or use your app data for advertising, tracking, or analytics. Placemarks uses Apple services for maps, optional iCloud sync, and optional encrypted map sharing as described below.</p>
 
     <h2>App data</h2>
     <p>The app does not use a developer-operated account system, advertising, analytics, tracking, or a developer server.</p>
@@ -66,6 +66,21 @@
     <p>Recent searches and app settings remain on your device and do not sync through iCloud. Placemarks does not receive or access this data.</p>
 
     <p>Depending on your device settings, Apple may include app data in device backups. Placemarks does not control or access those backups.</p>
+
+    <h2>Share Map</h2>
+    <p>In versions of Placemarks that support Share Map, you can choose to create a read-only snapshot of selected pins and share it through a link. A shared snapshot can include the visible place names and subtitles, map coordinates, visited status, favorite status, and the map framing needed to display those pins. It does not include notes, raw address fields, app-owned identifiers, or your identity.</p>
+
+    <p>Before a shared snapshot leaves your device, Placemarks encrypts it on-device with a new random key. Apple’s public CloudKit database stores only the encrypted snapshot together with limited technical metadata needed to operate the feature, such as its expiry time and format version. The decryption key is carried in the complete sharing link and is not stored with the public snapshot.</p>
+
+    <p>Anyone who receives the complete sharing link can use it to view the shared snapshot while the link remains valid, so you should share the link only with people you intend to give access to. Placemarks’ developer does not receive the decryption key or a readable copy of the shared snapshot through this design.</p>
+
+    <p>The sender’s private iCloud database also stores a private link-management record so active links can be viewed, shared again, or revoked across the sender’s devices. This private record includes the capability needed to manage the link and is stored using CloudKit’s encrypted-field support. Placemarks’ developer does not receive or inspect these private records.</p>
+
+    <p>Shared links expire 30 days after publication and can be revoked earlier by the sender. Placemarks and its App Clip refuse to open a shared snapshot after expiry. Revoking a link attempts to delete the corresponding public CloudKit record immediately, and the full app also attempts to clean up expired records when it becomes active.</p>
+
+    <p>CloudKit does not provide a native per-record time-to-live for this design, so physical deletion of an expired encrypted record may not occur at the exact expiry time if the sender app is no longer run. Any such retained public payload remains encrypted, and Placemarks’ developer does not receive its decryption key through this feature.</p>
+
+    <p>Apple operates CloudKit and the App Clip link service. Apple may process information needed to provide those services according to Apple’s privacy practices.</p>
 
     <h2>Apple Maps</h2>
     <p>Placemarks uses Apple Maps and MapKit to search for and display places. When you search for a place, select a map feature, or view map content, Apple may receive the information needed to handle that request, such as search text, place information, coordinates, and map region information. Those Apple Maps and MapKit requests are handled by Apple according to Apple’s privacy practices.</p>
@@ -81,7 +96,7 @@
     <p>Mathis von Holten</p>
     <p>Email: <a href="mailto:placemarks@icloud.com">placemarks@icloud.com</a></p>
 
-    <p class="updated">Last updated: July 19, 2026</p>
+    <p class="updated">Last updated: September 14, 2026</p>
   </main>
 </body>
 </html>
